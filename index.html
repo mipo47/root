@@ -99,6 +99,14 @@
     }, 5000);
   }
 
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+      links[i].addEventListener('click', function(event) {
+          event.preventDefault(); // Prevents the default action of the anchor tag
+          alert('Under construction');
+      });
+  }
+
   setInterval(createSnowflake, 100);
 </script>
 </body>
