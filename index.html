@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Developer Homepage</title>
+    <style>
+        body {
+            background-image: url('cool.png');
+            color: #f0f0f0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        #main {
+            background: black;
+            opacity: 80%;
+            margin: auto 10%;
+            padding: 10%;
+        }
+
+        @keyframes blinker {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .header {
+            animation: blinker 1s linear infinite;
+            color: yellow;
+            font-size: 24px;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .content {
+            text-align: center;
+        }
+
+        a {
+            color: #00ff00;
+            text-decoration: underline;
+        }
+
+        .footer {
+            text-align: center;
+            color: #ff00ff;
+            font-size: 18px;
+            margin-top: 50px;
+        }
+
+        @keyframes snowfall {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(100vh); }
+        }
+
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            z-index: 9999;
+            color: #ffffff;
+            user-select: none;
+            animation-name: snowfall;
+            animation-duration: 10s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+    </style>
+</head>
+<body>
+<div id="main">
+    <div class="header">Welcome to My Developer Homepage</div>
+
+    <div class="content">
+        <h2>About Me</h2>
+        <p>I'm a professional software developer with a love for coding and innovation.</p>
+        <p><a href="#projects">My Projects</a> | <a href="#blog">Blog</a> | <a href="#contact">Contact Me</a></p>
+    </div>
+
+    <div class="footer">
+        <img src="me.png" width="256"/>
+        <br/>
+        Thank you for visiting my website!
+    </div>
+</div>
+
+<script>
+  // JavaScript to create animated snowflakes
+  function createSnowflake() {
+    const snowflake = document.createElement('div');
+    snowflake.innerHTML = '&#10052;';
+    snowflake.style.left = Math.random() * 100 + 'vw';
+    snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
+    snowflake.style.opacity = Math.random();
+    snowflake.style.fontSize = Math.random() * 20 + 10 + 'px';
+    snowflake.classList.add('snowflake');
+    document.body.appendChild(snowflake);
+
+    setTimeout(() => {
+      snowflake.remove();
+    }, 5000);
+  }
+
+  setInterval(createSnowflake, 100);
+</script>
+</body>
+</html>
